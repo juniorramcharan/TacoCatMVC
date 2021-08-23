@@ -47,7 +47,7 @@ namespace TacoCatMVC.Controllers
             palindrome.RevWord = reverseWord;
 
             reverseWord = Regex.Replace(reverseWord.ToLower(),"[^a-zA-Z0-9]+","");
-            inputWord = Regex.Replace(reverseWord.ToLower(), "[^a-zA-Z0-9]+", "");
+            inputWord = Regex.Replace(inputWord.ToLower(), "[^a-zA-Z0-9]+", "");
 
             if(reverseWord == inputWord)
             {
@@ -57,7 +57,7 @@ namespace TacoCatMVC.Controllers
             else
             {
                 palindrome.IsPalindrome = false;
-                palindrome.Message = $" Success {palindrome.InputWord} is not a Palindrome";
+                palindrome.Message = $" Sorry {palindrome.InputWord} is not a Palindrome";
             }
             return View(palindrome);
         }
